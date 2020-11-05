@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="fonts.css">
   </head>
   <body>
-    <h1 class="title">Выберите уровень сложности:</h1>
-    <p class="text">Выберите сложность и игра начнётся. Чем выше уровень - тем больше будет выборка карт.</p>
-    <ul class="level">
-      <li class="level__elemet">Простой</li>
-      <li class="level__elemet">Средний</li>
-      <li class="level__elemet">Сложный</li>
-    </ul>
-    <button type="button" name="button" class="start">Начать игру</button>
-    <img src="./image/card.png" class="card-1" alt="Карта 1">
-    <img src="./image/card.png" class="card-2" alt="Карта 1">
+    <div class="face">
+      <h1 class="face__title">Выберите уровень сложности:</h1>
+      <p class="face__text">Выберите сложность и игра начнётся. Чем выше уровень - тем больше будет выборка карт.</p>
+      <ul class="face__level">
+        <li class="face__level_elemet">Простой</li>
+        <li class="face__level_elemet">Средний</li>
+        <li class="face__level_elemet">Сложный</li>
+      </ul>
+      <button type="button" name="button" class="face__start">Начать игру</button>
+      <img src="./image/card.png" class="face__card-1" alt="Карта 1">
+      <img src="./image/card.png" class="face__card-2" alt="Карта 1">
+    </div>
+    <div class="game visible"></div>
     <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>

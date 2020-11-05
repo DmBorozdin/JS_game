@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 
-.title {
+.face__title {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -20,20 +20,20 @@ body {
   margin: 12.5vh 0 10.5px 7.15%;
 }
 
-.text {
+.face__text {
   font-weight: normal;
   font-size: 19px;
   line-height: 22px;
   margin: 0 0 5.68vh 7.3%;
 }
 
-.level {
+.face__level {
   padding: 0;
   margin: 0 0 10.84vh 10.56%;
   list-style: none;
 }
 
-.level__elemet {
+.face__level_elemet {
   font-size: 50px;
   line-height: 59px;
   margin-bottom: 2.34vh;
@@ -41,11 +41,11 @@ body {
   position: relative;
 }
 
-.level__elemet:hover {
+.face__level_elemet:hover {
   color: #D62B2E;
 }
 
-.level__elemet_active::before {
+.face__level_elemet-active::before {
   width: 18px;
   height: 18px;
   content: "";
@@ -56,7 +56,7 @@ body {
   transform: rotate(45deg);
 }
 
-.start {
+.face__start {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -71,16 +71,56 @@ body {
   cursor: pointer;
 }
 
-.card-1 {
+.face__card-1 {
   position: absolute;
   left: 61.67%;
   top: 51.76vh;
   transform: rotate(11.9deg);
 }
 
-.card-2 {
+.face__card-2 {
   position: absolute;
   left: 74.17%;
   top: 53.52%;
   transform: rotate(39.26deg);
+}
+
+.visible {
+  display: none;
+}
+
+.game {
+  display: flex;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 218px;
+  height: 341px;
+  perspective: 1000px;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.active {
+  transform: rotateY(180deg);
+}
+
+.flip-card__front, .flip-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card__back {
+  transform: rotateY(180deg);
 }
