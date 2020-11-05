@@ -85,10 +85,6 @@ body {
   transform: rotate(39.26deg);
 }
 
-.visible {
-  display: none;
-}
-
 .game {
   display: flex;
 }
@@ -123,4 +119,8 @@ body {
 
 .flip-card__back {
   transform: rotateY(180deg);
+}
+
+.visible {
+  display: none;
 }

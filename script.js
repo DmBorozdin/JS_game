@@ -6,7 +6,7 @@ let pageFace = document.querySelector('.face');
 let pageGame = document.querySelector('.game');
 let flipCards;
 let flipCardInners;
-let active;
+let active = document.querySelector('.active');;
 
 
 // Выбор уровня сложности
@@ -95,14 +95,11 @@ button.addEventListener('click', () => {
 });
 
 document.onclick = function(event) {
-  if (active === null) {
-    active = document.querySelector('.active');
-  }
-
   console.log(active);
-  // if (active !== null) {
-  //   active.classList.toggle('active');
-  //   pageFace.classList.remove('visible');
-  //   pageGame.classList.add('visible');
-  // }
+  if (active !== null) {
+    active.classList.toggle('active');
+    pageFace.classList.remove('visible');
+    pageGame.classList.add('visible');
+  }
+  active = document.querySelector('.active');
 }
