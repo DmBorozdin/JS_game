@@ -13,7 +13,6 @@ let active = document.querySelector('.active');;
 ul.onclick = function(event) {
   target = event.target;
   hightLight(target);
-  console.log(target.innerHTML);
 }
 
 // Выделение выбранного уровня сложности
@@ -79,6 +78,7 @@ button.addEventListener('click', () => {
   }
   if (target.innerHTML ==='Сложный') {
     array = hard;
+    pageGame.classList.add('width');
   }
   shuffle(array);
   console.log(array);
@@ -90,16 +90,20 @@ button.addEventListener('click', () => {
   for (let i=0; i<flipCards.length;i++) {
     let flipCardInner = () => flipCardInners[i].classList.toggle('active');
     flipCards[i].addEventListener('click', flipCardInner, {once:true});
-    // flipCards[i].removeEventListener('click', flipCardInner);
   }
 });
 
 document.onclick = function(event) {
-  console.log(active);
   if (active !== null) {
     active.classList.toggle('active');
     pageFace.classList.remove('visible');
     pageGame.classList.add('visible');
+    pageGame.classList.remove('width');
+
+    // Удаление карт в конце игры
+    while (pageGame.firstChild) {
+      pageGame.removeChild(pageGame.firstChild);
+    }
   }
   active = document.querySelector('.active');
 }
