@@ -4,7 +4,7 @@ const ul = document.querySelector('.face__level');
 const button = document.querySelector('.face__start');
 const pageFace = document.querySelector('.face');
 const pageGame = document.querySelector('.game');
-const active = document.querySelector('.active');;
+let active = document.querySelector('.active');;
 
 
 // Выбор уровня сложности
