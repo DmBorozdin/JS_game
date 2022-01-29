@@ -1,12 +1,10 @@
 let selectedLi;
 let target = '';
-let ul = document.querySelector('.face__level');
-let button = document.querySelector('.face__start');
-let pageFace = document.querySelector('.face');
-let pageGame = document.querySelector('.game');
-let flipCards;
-let flipCardInners;
-let active = document.querySelector('.active');;
+const ul = document.querySelector('.face__level');
+const button = document.querySelector('.face__start');
+const pageFace = document.querySelector('.face');
+const pageGame = document.querySelector('.game');
+const active = document.querySelector('.active');;
 
 
 // Выбор уровня сложности
@@ -67,9 +65,9 @@ function createCard(array) {
 // Нажатие кнопки начать игру
 button.addEventListener('click', () => {
   let array;
-  let easy = [1,0,0];
-  let middle = [1,0,0,0,0,0];
-  let hard = [1,0,0,0,0,0,0,0,0,0];
+  const easy = [1,0,0];
+  const middle = [1,0,0,0,0,0];
+  const hard = [1,0,0,0,0,0,0,0,0,0];
   if (target.innerHTML ==='Простой' || target.innerHTML === undefined) {
     array = easy;
   }
@@ -81,12 +79,11 @@ button.addEventListener('click', () => {
     pageGame.classList.add('width');
   }
   shuffle(array);
-  console.log(array);
   pageFace.classList.add('visible');
   pageGame.classList.remove('visible');
   createCard(array);
-  flipCards = document.querySelectorAll('.flip-card');
-  flipCardInners = document.querySelectorAll('.flip-card__inner');
+  const flipCards = document.querySelectorAll('.flip-card');
+  const flipCardInners = document.querySelectorAll('.flip-card__inner');
   for (let i=0; i<flipCards.length;i++) {
     let flipCardInner = () => flipCardInners[i].classList.toggle('active');
     flipCards[i].addEventListener('click', flipCardInner, {once:true});
